@@ -5,14 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DirectPromoteur.tn – Immobilier neuf en Tunisie | Projets & Promoteurs</title>
   <meta name="description" content="Découvrez les nouveaux projets immobiliers en Tunisie : appartements, villas, résidences, Sousse, Tunis, Hammamet, Monastir… Comparez, contactez les promoteurs directement."/>
-  
+
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Font Awesome pour les icônes RS (option simple et léger) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Overlay "Coming Soon" -->
+<div id="comingSoonOverlay" class="coming-soon-overlay">
+  <div class="coming-soon-content">
+    <button class="close-overlay" id="closeOverlay">×</button>
+    
+    <div class="emoji-big">🏗️✨</div>
+    <h2>Le nouveau DirectPromoteur arrive...</h2>
+    <p class="teaser">
+      Une expérience plus rapide, plus belle, plus intuitive.<br>
+      Des projets immobiliers qui vous correspondent vraiment.
+    </p>
+
+    <div class="email-capture">
+      <p class="lead">Sois le premier informé du lancement !</p>
+      
+      <!-- Formulaire FormSubmit pour notification lancement -->
+      <form 
+        action="https://formsubmit.co/contact@directpromoteur.tn" 
+        method="POST"
+        id="launchNotifyForm"
+      >
+        <!-- Champs cachés recommandés par FormSubmit -->
+        <input type="hidden" name="_subject" value="Nouvelle inscription lancement site">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://directpromoteur.tn/merci-lancement.html"> <!-- optionnel -->
+
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="ton@email.com" 
+          required 
+          autocomplete="email"
+        >
+        <button type="submit">Me prévenir →</button>
+      </form>
+
+      <p class="form-info">Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong></p>
+      <p class="small">On te promet : pas de spam, juste l’essentiel.</p>
+    </div>
+  </div>
+</div>
 
 <header>
   <nav class="navbar">
@@ -29,9 +75,7 @@
       </div>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
@@ -65,10 +109,21 @@
     <h2>Ne ratez aucun projet immobilier neuf</h2>
     <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
 
-    <form class="newsletter-form" id="newsletterForm">
-      <input type="email" placeholder="Votre adresse e-mail" name="email" required>
+    <!-- Formulaire newsletter avec FormSubmit -->
+    <form 
+      action="https://formsubmit.co/contact@directpromoteur.tn" 
+      method="POST"
+      class="newsletter-form"
+      id="newsletterForm"
+    >
+      <input type="hidden" name="_subject" value="Nouvelle inscription newsletter">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
       <button type="submit">S'inscrire</button>
     </form>
+
+    <p class="form-info center">Réponse sur <strong>contact@directpromoteur.tn</strong></p>
   </div>
 </section>
 
@@ -115,6 +170,19 @@
         <h4>Adresse</h4>
         <p>Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie</p>
       </div>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/DirectPromoteur.tn/" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/directpromoteur.tn/" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/directpromoteurtn/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
     </div>
 
     <div class="footer-bottom">
