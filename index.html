@@ -1,10 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<title>Site en construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie | Projets & Promoteurs</title>
+  <meta name="description" content="Découvrez les nouveaux projets immobiliers en Tunisie : appartements, villas, résidences, Sousse, Tunis, Hammamet, Monastir… Comparez, contactez les promoteurs directement."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="text-align:center;margin-top:100px;font-family:Arial;">
-<h1>🚧 Site en cours de construction</h1>
-<p>Notre site arrive bientôt.</p>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Direct<span>Promoteur</span>.tn</div>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="#">Accueil</a>
+        <a href="#">Projets</a>
+        <a href="#">Promoteurs</a>
+        <a href="#">Actualités</a>
+        <a href="#">Carte</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Trouvez votre futur chez soi en Tunisie</h1>
+        <p>Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...</p>
+
+        <form class="search-bar" id="searchForm">
+          <input type="text" placeholder="Mot-clé, ville, projet…" name="keyword">
+          <select name="city">
+            <option value="">Ville</option>
+            <option value="sousse">Sousse</option>
+            <option value="tunis">Tunis</option>
+            <option value="hammamet">Hammamet</option>
+            <option value="monastir">Monastir</option>
+            <option value="mahdia">Mahdia</option>
+          </select>
+          <button type="submit">Rechercher</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="newsletter">
+  <div class="container">
+    <h2>Ne ratez aucun projet immobilier neuf</h2>
+    <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
+
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Votre adresse e-mail" name="email" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Direct<span>Promoteur</span>.tn</div>
+        <p>Votre référence pour l'immobilier neuf en Tunisie.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Projets immobiliers</a></li>
+          <li><a href="#">Promoteurs</a></li>
+          <li><a href="#">Actualités promoteurs</a></li>
+          <li><a href="#">Carte interactive</a></li>
+          <li><a href="#">Guide pratique</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Informations légales</h4>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">CGU</a></li>
+          <li><a href="#">Politique cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Contact@directpromoteur.tn</li>
+          <li>+216 55 606 303</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Adresse</h4>
+        <p>Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 DirectPromoteur.tn – Tous droits réservés
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
