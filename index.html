@@ -3,177 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie | Projets & Promoteurs</title>
-  <meta name="description" content="Découvrez les nouveaux projets immobiliers en Tunisie : appartements, villas, résidences, Sousse, Tunis, Hammamet, Monastir… Comparez, contactez les promoteurs directement."/>
+  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie</title>
+  <meta name="description" content="Le nouveau DirectPromoteur arrive... Soyez informé en premier !"/>
 
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome pour les icônes RS (option simple et léger) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary:    #5C82FD;
+      --dark:       #0C223F;
+      --dark-92:    rgba(12, 34, 63, 0.92);
+      --gray:       #6B7C93;
+      --lightgray:  #e5e7eb;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafc;
+      color: var(--dark);
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.65)),
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&auto=format&fit=crop') center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 4.8rem);
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+      line-height: 1.1;
+    }
+
+    .teaser {
+      font-size: 1.35rem;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 18px 48px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.22s;
+      box-shadow: 0 8px 30px rgba(92,130,253,0.35);
+    }
+
+    .cta-button:hover {
+      background: #4a6ee6;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(92,130,253,0.45);
+    }
+
+    /* ─── OVERLAY NON-FERMEABLE ──────────────────────────────── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--dark-92);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .overlay-content {
+      background: white;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 540px;
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .overlay.active .overlay-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .emoji-big { font-size: 72px; margin-bottom: 24px; }
+
+    .overlay-content h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .overlay-content p {
+      font-size: 1.15rem;
+      color: #444;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      border: 2px solid var(--lightgray);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 18px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover { background: #4a6ee6; }
+
+    .contact-info {
+      margin-top: 2.5rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .social-icons a {
+      color: var(--gray);
+      font-size: 1.8rem;
+      transition: all 0.25s;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .address {
+      margin-top: 1.8rem;
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .overlay-content { padding: 40px 24px; }
+      .emoji-big { font-size: 56px; }
+      h1 { font-size: 2.8rem; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Overlay "Coming Soon" -->
-<div id="comingSoonOverlay" class="coming-soon-overlay">
-  <div class="coming-soon-content">
-    <button class="close-overlay" id="closeOverlay">×</button>
-    
-    <div class="emoji-big">🏗️✨</div>
-    <h2>Le nouveau DirectPromoteur arrive...</h2>
+<div class="hero">
+  <div class="container">
+    <h1>Trouvez votre futur chez soi en Tunisie</h1>
     <p class="teaser">
-      Une expérience plus rapide, plus belle, plus intuitive.<br>
-      Des projets immobiliers qui vous correspondent vraiment.
+      Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...
     </p>
 
-    <div class="email-capture">
-      <p class="lead">Sois le premier informé du lancement !</p>
-      
-      <!-- Formulaire FormSubmit pour notification lancement -->
-      <form 
-        action="https://formsubmit.co/contact@directpromoteur.tn" 
-        method="POST"
-        id="launchNotifyForm"
-      >
-        <!-- Champs cachés recommandés par FormSubmit -->
-        <input type="hidden" name="_subject" value="Nouvelle inscription lancement site">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://directpromoteur.tn/merci-lancement.html"> <!-- optionnel -->
-
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="ton@email.com" 
-          required 
-          autocomplete="email"
-        >
-        <button type="submit">Me prévenir →</button>
-      </form>
-
-      <p class="form-info">Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong></p>
-      <p class="small">On te promet : pas de spam, juste l’essentiel.</p>
-    </div>
+    <button class="cta-button" id="openOverlay">
+      Être averti du lancement →
+    </button>
   </div>
 </div>
 
-<header>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="logo">Direct<span>Promoteur</span>.tn</div>
-      
-      <div class="nav-links" id="navLinks">
-        <a href="#">Accueil</a>
-        <a href="#">Projets</a>
-        <a href="#">Promoteurs</a>
-        <a href="#">Actualités</a>
-        <a href="#">Carte</a>
-        <a href="#">Contact</a>
-      </div>
+<!-- OVERLAY (non fermable par l'utilisateur) -->
+<div class="overlay" id="comingSoonOverlay">
+  <div class="overlay-content">
+    <div class="emoji-big">🏗️✨</div>
+    <h2>Le nouveau DirectPromoteur arrive...</h2>
+    <p>Une expérience plus rapide, plus belle, plus intuitive.<br>Des projets qui vous correspondent vraiment.</p>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="hero-content">
-    <div class="container">
-      <div class="hero-text">
-        <h1>Trouvez votre futur chez soi en Tunisie</h1>
-        <p>Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...</p>
-
-        <form class="search-bar" id="searchForm">
-          <input type="text" placeholder="Mot-clé, ville, projet…" name="keyword">
-          <select name="city">
-            <option value="">Ville</option>
-            <option value="sousse">Sousse</option>
-            <option value="tunis">Tunis</option>
-            <option value="hammamet">Hammamet</option>
-            <option value="monastir">Monastir</option>
-            <option value="mahdia">Mahdia</option>
-          </select>
-          <button type="submit">Rechercher</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</header>
-
-
-<section class="newsletter">
-  <div class="container">
-    <h2>Ne ratez aucun projet immobilier neuf</h2>
-    <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
-
-    <!-- Formulaire newsletter avec FormSubmit -->
-    <form 
-      action="https://formsubmit.co/contact@directpromoteur.tn" 
-      method="POST"
-      class="newsletter-form"
-      id="newsletterForm"
-    >
-      <input type="hidden" name="_subject" value="Nouvelle inscription newsletter">
+    <!-- Formulaire FormSubmit -->
+    <form action="https://formsubmit.co/contact@directpromoteur.tn" method="POST" class="form-group">
+      <input type="hidden" name="_subject" value="Inscription lancement DirectPromoteur">
       <input type="hidden" name="_captcha" value="false">
 
-      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
-      <button type="submit">S'inscrire</button>
+      <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+      <button type="submit" class="submit-btn">Me prévenir →</button>
     </form>
 
-    <p class="form-info center">Réponse sur <strong>contact@directpromoteur.tn</strong></p>
-  </div>
-</section>
-
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Direct<span>Promoteur</span>.tn</div>
-        <p>Votre référence pour l'immobilier neuf en Tunisie.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Liens rapides</h4>
-        <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Projets immobiliers</a></li>
-          <li><a href="#">Promoteurs</a></li>
-          <li><a href="#">Actualités promoteurs</a></li>
-          <li><a href="#">Carte interactive</a></li>
-          <li><a href="#">Guide pratique</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Informations légales</h4>
-        <ul>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">CGU</a></li>
-          <li><a href="#">Politique cookies</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>Contact@directpromoteur.tn</li>
-          <li>+216 55 606 303</li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Adresse</h4>
-        <p>Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie</p>
-      </div>
+    <div class="contact-info">
+      Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong><br>
+      Pas de spam, juste l’essentiel.
     </div>
 
-    <!-- Réseaux sociaux -->
-    <div class="social-links">
+    <!-- Réseaux sociaux + Adresse dans l'overlay -->
+    <div class="social-icons">
       <a href="https://www.facebook.com/DirectPromoteur.tn/" target="_blank" rel="noopener" aria-label="Facebook">
         <i class="fab fa-facebook-f"></i>
       </a>
@@ -185,12 +236,28 @@
       </a>
     </div>
 
-    <div class="footer-bottom">
-      © 2025 DirectPromoteur.tn – Tous droits réservés
+    <div class="address">
+      Rue Omar Ibnou Abdelaziz<br>
+      Sousse, Tunisie
     </div>
   </div>
-</footer>
+</div>
 
-<script src="main.js"></script>
+<script>
+  const overlay = document.getElementById('comingSoonOverlay');
+  const openBtn = document.getElementById('openOverlay');
+
+  if (openBtn && overlay) {
+    openBtn.addEventListener('click', () => {
+      overlay.classList.add('active');
+      // Option : empêcher le scroll du body quand overlay est ouvert
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  // Pas de code pour fermer l'overlay → il reste ouvert tant que l'utilisateur ne recharge pas la page
+  // Si tu veux quand même une fermeture après soumission, on peut l'ajouter plus tard
+</script>
+
 </body>
 </html>
