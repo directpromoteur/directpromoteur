@@ -1,263 +1,196 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie</title>
-  <meta name="description" content="Le nouveau DirectPromoteur arrive... Soyez informé en premier !"/>
+<!-- À mettre juste avant </body> -->
 
-  <link rel="icon" type="image/png" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div id="constructionOverlay" class="construction-overlay">
+  <div class="glass-card">
+    <div class="content-16by9">
 
-  <style>
-    :root {
-      --primary:    #5C82FD;
-      --dark:       #0C223F;
-      --dark-92:    rgba(12, 34, 63, 0.92);
-      --gray:       #6B7C93;
-      --lightgray:  #e5e7eb;
-    }
+      <div class="emoji">🏗️✨</div>
+      <h2>Le nouveau DirectPromoteur arrive…</h2>
+      
+      <p class="teaser">
+        Une expérience plus rapide, plus belle, plus intuitive.<br>
+        Des projets immobiliers qui vous correspondent vraiment.
+      </p>
 
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9fafc;
-      color: var(--dark);
-    }
+      <form action="https://formsubmit.co/contact@directpromoteur.tn" method="POST" class="notify-form">
+        <input type="hidden" name="_subject" value="Inscription lancement site">
+        <input type="hidden" name="_captcha" value="false">
 
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.65)),
-                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&auto=format&fit=crop') center/cover no-repeat;
-      color: white;
-      display: flex;
-      align-items: center;
-      text-align: center;
-    }
+        <input type="email" name="email" placeholder="votre@email.com" required autocomplete="email">
+        <button type="submit">Me prévenir du lancement →</button>
+      </form>
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+      <div class="bottom-info">
+        <p class="contact-line">
+          Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong><br>
+          <small>Pas de spam – juste l’essentiel</small>
+        </p>
 
-    h1 {
-      font-size: clamp(2.6rem, 7vw, 4.8rem);
-      font-weight: 700;
-      margin-bottom: 1.4rem;
-      line-height: 1.1;
-    }
+        <div class="social-row">
+          <a href="https://www.facebook.com/DirectPromoteur.tn/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/directpromoteur.tn/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/directpromoteurtn/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
 
-    .teaser {
-      font-size: 1.35rem;
-      max-width: 720px;
-      margin: 0 auto 3rem;
-      opacity: 0.95;
-    }
+        <p class="address">
+          Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie
+        </p>
+      </div>
 
-    .cta-button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 18px 48px;
-      font-size: 1.25rem;
-      font-weight: 600;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.22s;
-      box-shadow: 0 8px 30px rgba(92,130,253,0.35);
-    }
-
-    .cta-button:hover {
-      background: #4a6ee6;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(92,130,253,0.45);
-    }
-
-    /* ─── OVERLAY NON-FERMEABLE ──────────────────────────────── */
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: var(--dark-92);
-      backdrop-filter: blur(8px);
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .overlay.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .overlay-content {
-      background: white;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 540px;
-      padding: 48px 36px;
-      text-align: center;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-      transform: translateY(40px);
-      opacity: 0;
-      transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1);
-    }
-
-    .overlay.active .overlay-content {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .emoji-big { font-size: 72px; margin-bottom: 24px; }
-
-    .overlay-content h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .overlay-content p {
-      font-size: 1.15rem;
-      color: #444;
-      margin-bottom: 2.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 2rem;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 16px 20px;
-      font-size: 1.1rem;
-      border: 2px solid var(--lightgray);
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .submit-btn {
-      width: 100%;
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 18px;
-      font-size: 1.15rem;
-      font-weight: 600;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover { background: #4a6ee6; }
-
-    .contact-info {
-      margin-top: 2.5rem;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .social-icons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-    }
-
-    .social-icons a {
-      color: var(--gray);
-      font-size: 1.8rem;
-      transition: all 0.25s;
-    }
-
-    .social-icons a:hover {
-      color: var(--primary);
-      transform: translateY(-4px);
-    }
-
-    .address {
-      margin-top: 1.8rem;
-      font-size: 0.95rem;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 640px) {
-      .overlay-content { padding: 40px 24px; }
-      .emoji-big { font-size: 56px; }
-      h1 { font-size: 2.8rem; }
-    }
-  </style>
-</head>
-<body>
-
-<div class="hero">
-  <div class="container">
-    <h1>Trouvez votre futur chez soi en Tunisie</h1>
-    <p class="teaser">
-      Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...
-    </p>
-
-    <button class="cta-button" id="openOverlay">
-      Être averti du lancement →
-    </button>
-  </div>
-</div>
-
-<!-- OVERLAY (non fermable par l'utilisateur) -->
-<div class="overlay" id="comingSoonOverlay">
-  <div class="overlay-content">
-    <div class="emoji-big">🏗️✨</div>
-    <h2>Le nouveau DirectPromoteur arrive...</h2>
-    <p>Une expérience plus rapide, plus belle, plus intuitive.<br>Des projets qui vous correspondent vraiment.</p>
-
-    <!-- Formulaire FormSubmit -->
-    <form action="https://formsubmit.co/contact@directpromoteur.tn" method="POST" class="form-group">
-      <input type="hidden" name="_subject" value="Inscription lancement DirectPromoteur">
-      <input type="hidden" name="_captcha" value="false">
-
-      <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
-      <button type="submit" class="submit-btn">Me prévenir →</button>
-    </form>
-
-    <div class="contact-info">
-      Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong><br>
-      Pas de spam, juste l’essentiel.
-    </div>
-
-    <!-- Réseaux sociaux + Adresse dans l'overlay -->
-    <div class="social-icons">
-      <a href="https://www.facebook.com/DirectPromoteur.tn/" target="_blank" rel="noopener" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/directpromoteur.tn/" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com/company/directpromoteurtn/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-
-    <div class="address">
-      Rue Omar Ibnou Abdelaziz<br>
-      Sousse, Tunisie
     </div>
   </div>
 </div>
 
-<script>
-  const overlay = document.getElementById('comingSoonOverlay');
-  const openBtn = document.getElementById('openOverlay');
-
-  if (openBtn && overlay) {
-    openBtn.addEventListener('click', () => {
-      overlay.classList.add('active');
-      // Option : empêcher le scroll du body quand overlay est ouvert
-      document.body.style.overflow = 'hidden';
-    });
+<style>
+  .construction-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 25, 38, 0.72);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    z-index: 9999;
+    display: none;
+    place-items: center;
+    overflow: auto;
+    padding: 20px;
   }
 
-  // Pas de code pour fermer l'overlay → il reste ouvert tant que l'utilisateur ne recharge pas la page
-  // Si tu veux quand même une fermeture après soumission, on peut l'ajouter plus tard
-</script>
+  .construction-overlay.active {
+    display: grid;
+  }
 
-</body>
-</html>
+  .glass-card {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    width: 100%;
+    max-width: 860px;
+  }
+
+  .content-16by9 {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8% 10%;
+    text-align: center;
+    color: white;
+  }
+
+  .emoji {
+    font-size: 5.2rem;
+    margin-bottom: 1.4rem;
+    line-height: 1;
+  }
+
+  .glass-card h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.1rem;
+    font-weight: 700;
+  }
+
+  .teaser {
+    font-size: 1.18rem;
+    opacity: 0.92;
+    margin-bottom: 2.4rem;
+    max-width: 640px;
+  }
+
+  .notify-form {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 2.4rem;
+  }
+
+  .notify-form input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+
+  .notify-form button {
+    background: #5C82FD;
+    color: white;
+    border: none;
+    padding: 0 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .bottom-info {
+    margin-top: 1.8rem;
+    font-size: 0.98rem;
+    opacity: 0.9;
+  }
+
+  .contact-line strong {
+    color: #a5d0ff;
+  }
+
+  .social-row {
+    margin: 1.8rem 0;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  .social-row a {
+    color: white;
+    font-size: 1.8rem;
+    opacity: 0.75;
+    transition: 0.2s;
+  }
+
+  .social-row a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .address {
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 780px) {
+    .content-16by9 { padding: 10% 8%; }
+    .glass-card h2 { font-size: 2rem; }
+    .notify-form { flex-direction: column; }
+    .notify-form button { padding: 16px; width: 100%; }
+  }
+</style>
+
+<script>
+// Sélectionne TOUS les éléments interactifs que tu veux intercepter
+document.addEventListener('click', e => {
+  // Cible tous les <a> et <button> (ajuste si tu as d'autres éléments cliquables)
+  if (e.target.closest('a, button, [role="button"], .cta, .search-btn, .newsletter button')) {
+    // Empêche le comportement par défaut (navigation, submit, etc.)
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Ouvre l’overlay
+    document.getElementById('constructionOverlay').classList.add('active');
+
+    // Option : bloque le scroll du body
+    document.body.style.overflow = 'hidden';
+  }
+}, { capture: true });   // capture: true → intercepte très tôt
+</script>
