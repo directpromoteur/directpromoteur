@@ -68,10 +68,23 @@
 <section class="newsletter">
   <div class="container">
     <h2>Ne ratez aucun projet immobilier neuf</h2>
-    <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
-
-    <form class="newsletter-form" id="newsletterForm">
-      <input type="email" placeholder="Votre adresse e-mail" name="email" required>
+    <p>Inscrivez-vous et recevez en avant-première les lancements, promotions et actualités.</p>
+    
+    <form class="newsletter-form" 
+          action="https://formsubmit.co/contact@directpromoteur.tn" 
+          method="POST">
+      
+      <input type="email" 
+             name="email" 
+             placeholder="Votre adresse e-mail" 
+             required>
+      
+      <!-- Champs cachés pour personnaliser l'email reçu -->
+      <input type="hidden" name="_subject" value="Nouvelle inscription newsletter - DirectPromoteur.tn">
+      <input type="hidden" name="_next" value="https://directpromoteur.tn/merci-inscription.html"> <!-- optionnel : page de remerciement -->
+      <input type="hidden" name="_autoresponse" value="Merci pour votre inscription ! Vous recevrez bientôt nos nouveautés immobilières en Tunisie (lancements, promotions, actualités). À très vite sur DirectPromoteur.tn !">
+      <input type="text" name="_gotcha" style="display:none"> <!-- anti-spam honeypot -->
+      
       <button type="submit">S'inscrire</button>
     </form>
   </div>
