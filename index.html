@@ -1,196 +1,390 @@
-<!-- À mettre juste avant </body> -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie | Projets & Promoteurs</title>
+  <meta name="description" content="Découvrez les nouveaux projets immobiliers en Tunisie : appartements, villas, résidences, Sousse, Tunis, Hammamet, Monastir… Comparez, contactez les promoteurs directement."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary:    #5C82FD;
+      --dark:       #0C223F;
+      --dark-80:    #0C223FCC;
+      --gray:       #6B7C93;
+      --light:      #F8FAFC;
+      --border:     rgba(255,255,255,0.12);
+    }
 
-<div id="constructionOverlay" class="construction-overlay">
-  <div class="glass-card">
-    <div class="content-16by9">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <div class="emoji">🏗️✨</div>
-      <h2>Le nouveau DirectPromoteur arrive…</h2>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Header / Hero ──────────────────────────────────────── */
+    header {
+      position: relative;
+      height: 100vh;
+      min-height: 720px;
+      background: linear-gradient(to bottom, transparent 40%, #000d), 
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: white;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 680px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.8rem, 6vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-text p {
+      font-size: 1.24rem;
+      opacity: 0.92;
+      max-width: 520px;
+      margin-bottom: 2.4rem;
+    }
+
+    .search-bar {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      max-width: 620px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.22);
+    }
+
+    .search-bar input,
+    .search-bar select,
+    .search-bar button {
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      padding: 0 16px;
+      outline: none;
+    }
+
+    .search-bar input {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .search-bar select {
+      border-left: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+      color: var(--gray);
+    }
+
+    .search-bar button {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 14px 32px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover {
+      background: #4a6ee6;
+    }
+
+    /* ─── Newsletter ─────────────────────────────────────────── */
+    .newsletter {
+      background: var(--dark);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .newsletter p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .newsletter-form {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 1rem;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .newsletter-form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    footer {
+      background: #0A1B33;
+      color: #c9d5e6;
+      padding: 100px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-logo span {
+      color: var(--primary);
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 1.15rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      color: #c9d5e6;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 40px;
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-text h1 { font-size: 2.6rem; }
+      .search-bar    { flex-direction: column; gap: 12px; }
+      .search-bar select { border: none; border-top: 1px solid #e5e7eb; }
+      .footer-grid   { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Direct<span>Promoteur</span>.tn</div>
       
-      <p class="teaser">
-        Une expérience plus rapide, plus belle, plus intuitive.<br>
-        Des projets immobiliers qui vous correspondent vraiment.
-      </p>
-
-      <form action="https://formsubmit.co/contact@directpromoteur.tn" method="POST" class="notify-form">
-        <input type="hidden" name="_subject" value="Inscription lancement site">
-        <input type="hidden" name="_captcha" value="false">
-
-        <input type="email" name="email" placeholder="votre@email.com" required autocomplete="email">
-        <button type="submit">Me prévenir du lancement →</button>
-      </form>
-
-      <div class="bottom-info">
-        <p class="contact-line">
-          Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong><br>
-          <small>Pas de spam – juste l’essentiel</small>
-        </p>
-
-        <div class="social-row">
-          <a href="https://www.facebook.com/DirectPromoteur.tn/" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/directpromoteur.tn/" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/directpromoteurtn/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-
-        <p class="address">
-          Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie
-        </p>
+      <div class="nav-links">
+        <a href="#">Accueil</a>
+        <a href="#">Projets</a>
+        <a href="#">Promoteurs</a>
+        <a href="#">Actualités</a>
+        <a href="#">Carte</a>
+        <a href="#">Contact</a>
       </div>
+    </div>
+  </nav>
 
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Trouvez votre futur chez soi en Tunisie</h1>
+        <p>Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...</p>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Mot-clé, ville, projet…">
+          <select>
+            <option>Ville</option>
+            <option>Sousse</option>
+            <option>Tunis</option>
+            <option>Hammamet</option>
+            <option>Monastir</option>
+            <option>Mahdia</option>
+          </select>
+          <button>Rechercher</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</header>
 
-<style>
-  .construction-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(18, 25, 38, 0.72);
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
-    z-index: 9999;
-    display: none;
-    place-items: center;
-    overflow: auto;
-    padding: 20px;
-  }
 
-  .construction-overlay.active {
-    display: grid;
-  }
+<section class="newsletter">
+  <div class="container">
+    <h2>Ne ratez aucun projet immobilier neuf</h2>
+    <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
 
-  .glass-card {
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    overflow: hidden;
-    width: 100%;
-    max-width: 860px;
-  }
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre adresse e-mail" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+  </div>
+</section>
 
-  .content-16by9 {
-    aspect-ratio: 16 / 9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8% 10%;
-    text-align: center;
-    color: white;
-  }
 
-  .emoji {
-    font-size: 5.2rem;
-    margin-bottom: 1.4rem;
-    line-height: 1;
-  }
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Direct<span>Promoteur</span>.tn</div>
+        <p>Votre référence pour l'immobilier neuf en Tunisie.</p>
+      </div>
 
-  .glass-card h2 {
-    font-size: 2.4rem;
-    margin-bottom: 1.1rem;
-    font-weight: 700;
-  }
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Projets immobiliers</a></li>
+          <li><a href="#">Promoteurs</a></li>
+          <li><a href="#">Actualités promoteurs</a></li>
+          <li><a href="#">Carte interactive</a></li>
+          <li><a href="#">Guide pratique</a></li>
+        </ul>
+      </div>
 
-  .teaser {
-    font-size: 1.18rem;
-    opacity: 0.92;
-    margin-bottom: 2.4rem;
-    max-width: 640px;
-  }
+      <div class="footer-col">
+        <h4>Informations légales</h4>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">CGU</a></li>
+          <li><a href="#">Politique cookies</a></li>
+        </ul>
+      </div>
 
-  .notify-form {
-    width: 100%;
-    max-width: 480px;
-    display: flex;
-    gap: 12px;
-    margin-bottom: 2.4rem;
-  }
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Contact@directpromoteur.tn</li>
+          <li>+216 55 606 303</li>
+        </ul>
+      </div>
 
-  .notify-form input {
-    flex: 1;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.05rem;
-  }
+      <div class="footer-col">
+        <h4>Adresse</h4>
+        <p>Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie</p>
+      </div>
+    </div>
 
-  .notify-form button {
-    background: #5C82FD;
-    color: white;
-    border: none;
-    padding: 0 32px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1.05rem;
-    cursor: pointer;
-    white-space: nowrap;
-  }
+    <div class="footer-bottom">
+      © 2025 DirectPromoteur.tn – Tous droits réservés
+    </div>
+  </div>
+</footer>
 
-  .bottom-info {
-    margin-top: 1.8rem;
-    font-size: 0.98rem;
-    opacity: 0.9;
-  }
-
-  .contact-line strong {
-    color: #a5d0ff;
-  }
-
-  .social-row {
-    margin: 1.8rem 0;
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-  }
-
-  .social-row a {
-    color: white;
-    font-size: 1.8rem;
-    opacity: 0.75;
-    transition: 0.2s;
-  }
-
-  .social-row a:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-  }
-
-  .address {
-    font-size: 0.95rem;
-    opacity: 0.8;
-  }
-
-  @media (max-width: 780px) {
-    .content-16by9 { padding: 10% 8%; }
-    .glass-card h2 { font-size: 2rem; }
-    .notify-form { flex-direction: column; }
-    .notify-form button { padding: 16px; width: 100%; }
-  }
-</style>
-
-<script>
-// Sélectionne TOUS les éléments interactifs que tu veux intercepter
-document.addEventListener('click', e => {
-  // Cible tous les <a> et <button> (ajuste si tu as d'autres éléments cliquables)
-  if (e.target.closest('a, button, [role="button"], .cta, .search-btn, .newsletter button')) {
-    // Empêche le comportement par défaut (navigation, submit, etc.)
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Ouvre l’overlay
-    document.getElementById('constructionOverlay').classList.add('active');
-
-    // Option : bloque le scroll du body
-    document.body.style.overflow = 'hidden';
-  }
-}, { capture: true });   // capture: true → intercepte très tôt
-</script>
+</body>
+</html>
