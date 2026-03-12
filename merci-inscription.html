@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merci pour votre inscription ! – DirectPromoteur.tn</title>
+  
+  <!-- Même favicons que la page principale -->
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
+  
+  <!-- Même Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Même fichier CSS que la page principale -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Redirection automatique après 6 secondes -->
+  <meta http-equiv="refresh" content="6;url=/">
+  
+  <style>
+    /* Styles spécifiques à cette page de merci (en plus du style.css) */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--light);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .merci-container {
+      max-width: 680px;
+      background: white;
+      border-radius: var(--radius);
+      padding: 60px 40px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(199, 143, 61, 0.15);
+    }
+    
+    .merci-logo {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .merci-logo span {
+      color: var(--primary);
+    }
+    
+    h1 {
+      color: var(--dark);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      font-size: 1.18rem;
+      color: var(--gray-dark);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    
+    .countdown {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-top: 1.5rem;
+    }
+    
+    .btn-retour {
+      background: var(--primary);
+      color: white;
+      padding: 14px 36px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    
+    .btn-retour:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 640px) {
+      .merci-container {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="merci-container">
+    <div class="merci-logo">Direct<span>Promoteur</span>.tn</div>
+    
+    <h1>Merci pour votre inscription !</h1>
+    
+    <p>Vous êtes désormais inscrit à notre newsletter.<br>
+       Vous recevrez en avant-première les lancements de projets, promotions et actualités immobilières en Tunisie.</p>
+    
+    <a href="/" class="btn-retour">Retour à l'accueil</a>
+    
+    <div class="countdown">
+      Redirection automatique vers la page d'accueil dans <span id="timer">6</span> secondes...
+    </div>
+  </div>
+
+  <!-- Petit script pour afficher le compte à rebours (optionnel mais plus sympa) -->
+  <script>
+    let seconds = 6;
+    const timerElement = document.getElementById('timer');
+    
+    const countdown = setInterval(() => {
+      seconds--;
+      if (timerElement) timerElement.textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        window.location.href = '/';
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
