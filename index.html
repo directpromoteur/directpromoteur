@@ -10,285 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <style>
-    :root {
-      --primary:    #5C82FD;
-      --dark:       #0C223F;
-      --dark-80:    #0C223FCC;
-      --gray:       #6B7C93;
-      --light:      #F8FAFC;
-      --border:     rgba(255,255,255,0.12);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #fff;
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ─── Header / Hero ──────────────────────────────────────── */
-    header {
-      position: relative;
-      height: 100vh;
-      min-height: 720px;
-      background: linear-gradient(to bottom, transparent 40%, #000d), 
-                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: white;
-    }
-
-    nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 28px 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      font-weight: 500;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .hero-content {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-text {
-      max-width: 680px;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2.8rem, 6vw, 4.6rem);
-      font-weight: 700;
-      line-height: 1.12;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-text p {
-      font-size: 1.24rem;
-      opacity: 0.92;
-      max-width: 520px;
-      margin-bottom: 2.4rem;
-    }
-
-    .search-bar {
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      border-radius: 16px;
-      padding: 12px;
-      display: flex;
-      max-width: 620px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.22);
-    }
-
-    .search-bar input,
-    .search-bar select,
-    .search-bar button {
-      border: none;
-      background: transparent;
-      font-size: 1rem;
-      padding: 0 16px;
-      outline: none;
-    }
-
-    .search-bar input {
-      flex: 1;
-      min-width: 180px;
-    }
-
-    .search-bar select {
-      border-left: 1px solid #e5e7eb;
-      border-right: 1px solid #e5e7eb;
-      color: var(--gray);
-    }
-
-    .search-bar button {
-      background: var(--primary);
-      color: white;
-      font-weight: 600;
-      border-radius: 12px;
-      padding: 14px 32px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .search-bar button:hover {
-      background: #4a6ee6;
-    }
-
-    /* ─── Newsletter ─────────────────────────────────────────── */
-    .newsletter {
-      background: var(--dark);
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-    }
-
-    .newsletter h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .newsletter p {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      max-width: 580px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .newsletter-form {
-      max-width: 480px;
-      margin: 0 auto;
-      display: flex;
-      gap: 12px;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      padding: 16px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.08);
-      color: white;
-      font-size: 1rem;
-    }
-
-    .newsletter-form input::placeholder {
-      color: rgba(255,255,255,0.5);
-    }
-
-    .newsletter-form button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0 36px;
-      border-radius: 12px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    /* ─── Footer ─────────────────────────────────────────────── */
-    footer {
-      background: #0A1B33;
-      color: #c9d5e6;
-      padding: 100px 0 40px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 80px;
-    }
-
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1.4rem;
-    }
-
-    .footer-logo span {
-      color: var(--primary);
-    }
-
-    .footer-col h4 {
-      color: white;
-      font-size: 1.15rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .footer-col a {
-      color: #c9d5e6;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: var(--primary);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 40px;
-      text-align: center;
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-text h1 { font-size: 2.6rem; }
-      .search-bar    { flex-direction: column; gap: 12px; }
-      .search-bar select { border: none; border-top: 1px solid #e5e7eb; }
-      .footer-grid   { grid-template-columns: 1fr; }
-      .newsletter-form { flex-direction: column; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <nav>
+  <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">Direct<span>Promoteur</span>.tn</div>
       
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="#">Accueil</a>
         <a href="#">Projets</a>
         <a href="#">Promoteurs</a>
@@ -296,6 +27,12 @@
         <a href="#">Carte</a>
         <a href="#">Contact</a>
       </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -305,18 +42,18 @@
         <h1>Trouvez votre futur chez soi en Tunisie</h1>
         <p>Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...</p>
 
-        <div class="search-bar">
-          <input type="text" placeholder="Mot-clé, ville, projet…">
-          <select>
-            <option>Ville</option>
-            <option>Sousse</option>
-            <option>Tunis</option>
-            <option>Hammamet</option>
-            <option>Monastir</option>
-            <option>Mahdia</option>
+        <form class="search-bar" id="searchForm">
+          <input type="text" placeholder="Mot-clé, ville, projet…" name="keyword">
+          <select name="city">
+            <option value="">Ville</option>
+            <option value="sousse">Sousse</option>
+            <option value="tunis">Tunis</option>
+            <option value="hammamet">Hammamet</option>
+            <option value="monastir">Monastir</option>
+            <option value="mahdia">Mahdia</option>
           </select>
-          <button>Rechercher</button>
-        </div>
+          <button type="submit">Rechercher</button>
+        </form>
       </div>
     </div>
   </div>
@@ -328,8 +65,8 @@
     <h2>Ne ratez aucun projet immobilier neuf</h2>
     <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
 
-    <form class="newsletter-form">
-      <input type="email" placeholder="Votre adresse e-mail" required>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Votre adresse e-mail" name="email" required>
       <button type="submit">S'inscrire</button>
     </form>
   </div>
@@ -386,5 +123,6 @@
   </div>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
