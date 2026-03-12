@@ -3,81 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie | Projets & Promoteurs</title>
-  <meta name="description" content="Découvrez les nouveaux projets immobiliers en Tunisie : appartements, villas, résidences, Sousse, Tunis, Hammamet, Monastir… Comparez, contactez les promoteurs directement."/>
-  <!-- Favicon -->
+  <title>DirectPromoteur.tn – Immobilier neuf en Tunisie</title>
+  <meta name="description" content="Le site n'est pas encore lancé – soyez informé en premier" />
+
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
-  <!-- Optionnel : versions supplémentaires pour différents appareils -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/yvhfyy7ph/Site/FavIcon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo">Direct<span>Promoteur</span>.tn</div>
+    
+    <div class="nav-links">
+      <a href="#">Accueil</a>
+      <a href="#">Projets</a>
+      <a href="#">Promoteurs</a>
+      <a href="#">Actualités</a>
+      <a href="#">Carte</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
 <header>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="logo">Direct<span>Promoteur</span>.tn</div>
-      
-      <div class="nav-links" id="navLinks">
-        <a href="#">Accueil</a>
-        <a href="#">Projets</a>
-        <a href="#">Promoteurs</a>
-        <a href="#">Actualités</a>
-        <a href="#">Carte</a>
-        <a href="#">Contact</a>
-      </div>
+  <div class="container">
+    <h1>Trouvez votre futur chez soi en Tunisie</h1>
+    <p class="hero-text">
+      Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, 
+      Sousse, Tunis, Hammamet, Monastir, Nabeul...
+    </p>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="hero-content">
-    <div class="container">
-      <div class="hero-text">
-        <h1>Trouvez votre futur chez soi en Tunisie</h1>
-        <p>Les meilleurs projets immobiliers neufs : appartements, villas, résidences avec piscine, Sousse, Tunis, Hammamet, Monastir, Nabeul...</p>
-
-        <form class="search-bar" id="searchForm">
-          <input type="text" placeholder="Mot-clé, ville, projet…" name="keyword">
-          <select name="city">
-            <option value="">Ville</option>
-            <option value="sousse">Sousse</option>
-            <option value="tunis">Tunis</option>
-            <option value="hammamet">Hammamet</option>
-            <option value="monastir">Monastir</option>
-            <option value="mahdia">Mahdia</option>
-          </select>
-          <button type="submit">Rechercher</button>
-        </form>
-      </div>
-    </div>
+    <form class="search-bar">
+      <input type="text" placeholder="Mot-clé, ville, projet…">
+      <select>
+        <option>Ville</option>
+        <option>Sousse</option>
+        <option>Tunis</option>
+        <option>Hammamet</option>
+        <option>Monastir</option>
+      </select>
+      <button type="button">Rechercher</button>
+    </form>
   </div>
 </header>
 
-
+<!-- Newsletter -->
 <section class="newsletter">
   <div class="container">
     <h2>Ne ratez aucun projet immobilier neuf</h2>
     <p>Inscrivez-vous à notre newsletter et recevez en avant-première les lancements, promotions et actualités des promoteurs en Tunisie.</p>
 
-    <form class="newsletter-form" id="newsletterForm">
-      <input type="email" placeholder="Votre adresse e-mail" name="email" required>
+    <form class="newsletter-form" action="https://formsubmit.co/contact@directpromoteur.tn" method="POST">
+      <input type="hidden" name="_subject" value="Nouvelle inscription newsletter">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
       <button type="submit">S'inscrire</button>
     </form>
+
+    <p class="form-note">Réponse sur <strong>contact@directpromoteur.tn</strong></p>
   </div>
 </section>
 
-
+<!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -86,29 +80,7 @@
         <p>Votre référence pour l'immobilier neuf en Tunisie.</p>
       </div>
 
-      <div class="footer-col">
-        <h4>Liens rapides</h4>
-        <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Projets immobiliers</a></li>
-          <li><a href="#">Promoteurs</a></li>
-          <li><a href="#">Actualités promoteurs</a></li>
-          <li><a href="#">Carte interactive</a></li>
-          <li><a href="#">Guide pratique</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Informations légales</h4>
-        <ul>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">CGU</a></li>
-          <li><a href="#">Politique cookies</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
+      <div>
         <h4>Contact</h4>
         <ul>
           <li>Contact@directpromoteur.tn</li>
@@ -116,17 +88,63 @@
         </ul>
       </div>
 
-      <div class="footer-col">
+      <div>
         <h4>Adresse</h4>
         <p>Rue Omar Ibnou Abdelaziz<br>Sousse, Tunisie</p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      © 2026 DirectPromoteur.tn – Tous droits réservés
+      © 2025 DirectPromoteur.tn – Tous droits réservés
     </div>
   </div>
 </footer>
+
+<!-- Overlay Liquid Glass -->
+<div id="comingSoonOverlay" class="overlay">
+  <div class="glass-container">
+    <div class="glass-content">
+      <h2>Le site DirectPromoteur n'est pas encore lancé</h2>
+      
+      <p class="teaser">
+        Nous préparons activement une nouvelle version plus rapide,<br>
+        plus moderne et plus adaptée à vos besoins immobiliers.
+      </p>
+
+      <form action="https://formsubmit.co/contact@directpromoteur.tn" method="POST" class="notify-form">
+        <input type="hidden" name="_subject" value="Alerte lancement DirectPromoteur">
+        <input type="hidden" name="_captcha" value="false">
+
+        <input type="email" name="email" placeholder="votre@email.com" required autocomplete="email">
+        <button type="submit">Me prévenir quand le site sera lancé</button>
+      </form>
+
+      <div class="footer-info">
+        <p class="contact-info">
+          Nous vous répondrons sur <strong>contact@directpromoteur.tn</strong><br>
+          <small>Pas de spam – uniquement les informations essentielles</small>
+        </p>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/DirectPromoteur.tn/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/directpromoteur.tn/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/directpromoteurtn/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <p class="address">
+          Rue Omar Ibnou Abdelaziz<br>
+          Sousse, Tunisie
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="main.js"></script>
 </body>
